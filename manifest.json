@@ -17,6 +17,7 @@
     }
   ],
   "background": {
-      "scripts": ["js/background.js"], "persistent": false
+    "scripts": ["js/chrome/tabs/sendMessageToActiveTab.js", "js/background.js"],
+    "persistent": false
   }
 }
