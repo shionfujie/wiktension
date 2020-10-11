@@ -12,7 +12,7 @@
   "permissions": [],
   "content_scripts": [
     {
-      "matches": ["https://en.wikipedia.org/wiki/*"],
+      "matches": ["https://*.wikipedia.org/wiki/*"],
       "js": ["js/content.js"]
     }
   ],
