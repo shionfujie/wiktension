@@ -46,7 +46,7 @@ const actionSpec = {
       f: getLanguages
     },
     "fragment": {
-      display: "Wikipedia: Copy Fragment",
+      displayName: "Wikipedia: Take the First Sentence",
       f: injectFragmentExtractor
     }
   }
