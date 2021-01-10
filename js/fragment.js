@@ -28,6 +28,7 @@ function takeFirstSentence(ev) {
     const sentence = sentences(ev.currentTarget.textContent)[0]
     console.debug(sentence)
     ev.stopPropagation()
+    teardown()
 }
 
 function sentences(text) {
