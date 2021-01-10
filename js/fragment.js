@@ -1,7 +1,6 @@
 setup();
 
 function setup() {
-    console.debug("Setting up")
     addListeners();
 }
 
@@ -25,7 +24,6 @@ function decorate(ev) {
 
 function takeFirstSentence(ev) {
     const sentence = sentences(ev.currentTarget.textContent)[0]
-    console.debug(sentence)
     ev.stopPropagation()
     if (navigator.clipboard === undefined) {
         console.debug("takeFirstSentence: newClip: ", newClip)
@@ -54,9 +52,3 @@ function removeListeners() {
         el.removeEventListener("click", takeFirstSentence)
     }
 }
-
-// function extractFragment(e) {
-//     const el = e.currentTarget
-
-
-// }
