@@ -44,6 +44,10 @@ const actionSpec = {
   actions: {
     "switch language": {
       f: getLanguages
+    },
+    "fragment": {
+      display: "Wikipedia: Copy Fragment",
+      f: injectFragmentExtractor
     }
   }
 };
@@ -54,4 +58,8 @@ function getLanguages(sendLanguages) {
 
 function requestNavigateTo(url) {
   sendMessageToActiveTab({ type: "navigate", url });
+}
+
+function injectFragmentExtractor() {
+  chrome.tabs.executeScript({ file: "/js/fragment.js"})
 }
