@@ -3,7 +3,6 @@ setup();
 function setup() {
     console.debug("Setting up")
     addListeners();
-    injectCSS();
 }
 
 var capturing = undefined
