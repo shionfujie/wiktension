@@ -23,10 +23,10 @@ function decorate(ev) {
 }
 
 function takeFirstSentence(ev) {
-    const sentence = sentences(ev.currentTarget.textContent)[0]
+    const sentence = sentences(textMathSymbolsEscaped(ev.currentTarget))[0]
     ev.stopPropagation()
     if (navigator.clipboard === undefined) {
-        console.debug("takeFirstSentence: newClip: ", newClip)
+        console.debug("takeFirstSentence: clip: ", sentence)
         console.debug("takeFirstSentence: navigator.clipboard is not available")
     } else {
         navigator.clipboard.writeText(sentence);
@@ -36,6 +36,18 @@ function takeFirstSentence(ev) {
 
 function sentences(text) {
     return text.replace(/([.!?]\s+(?=.))/g, "$1|").split(/[|]/g)
+}
+
+function textMathSymbolsEscaped(el) {
+    var result = ""
+    el.childNodes.forEach(n => {
+        if (n.nodeType === Node.ELEMENT_NODE && n.className === "mwe-math-element") {
+            result += "\n\n" + n.querySelector("img").alt.trim() + "\n\n"
+        } else {
+            result += n.textContent
+        }
+    })
+    return result
 }
 
 function teardown() {
