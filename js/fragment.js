@@ -27,6 +27,12 @@ function takeFirstSentence(ev) {
     const sentence = sentences(ev.currentTarget.textContent)[0]
     console.debug(sentence)
     ev.stopPropagation()
+    if (navigator.clipboard === undefined) {
+        console.debug("takeFirstSentence: newClip: ", newClip)
+        console.debug("takeFirstSentence: navigator.clipboard is not available")
+    } else {
+        navigator.clipboard.writeText(sentence);
+    }
     teardown()
 }
 
