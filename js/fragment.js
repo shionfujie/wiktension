@@ -7,12 +7,12 @@ function setup() {
 var capturing = undefined
 function addListeners() {
     for (const el of document.querySelectorAll("p,div")) {
-        el.addEventListener("mouseover", decorate)
+        el.addEventListener("mouseover", highlightBackground)
         el.addEventListener("click", takeFirstSentence)
     }
 }
 
-function decorate(ev) {
+function highlightBackground(ev) {
     const el = ev.currentTarget
     if (capturing !== undefined) {
         capturing.style["background"] = ""
@@ -60,7 +60,7 @@ function teardown() {
 
 function removeListeners() {
     for (const el of document.querySelectorAll("p,div")) {
-        el.removeEventListener("mouseover", decorate);
+        el.removeEventListener("mouseover", highlightBackground);
         el.removeEventListener("click", takeFirstSentence)
     }
 }
