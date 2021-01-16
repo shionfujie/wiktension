@@ -61,5 +61,5 @@ function requestNavigateTo(url) {
 }
 
 function injectFragmentExtractor() {
-  chrome.tabs.executeScript({ file: "/js/fragment.js"})
+  chrome.tabs.executeScript({ file: "/js/fragment.js" })
 }
