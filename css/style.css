@@ -1,0 +1,45 @@
+a {
+  font-weight: bold !important;
+  color: #881391 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+b,
+span.toctext,
+span.texhtml,
+.hatnote.navigation-not-searchable,
+.mw-panel a,
+li > a {
+  color: #3032aa !important;
+  font-weight: bold !important;
+  font-style: normal !important;
+}
+
+div#toc,
+.thumbinner,
+html.client-js.ve-available,
+div#content,
+div#mw-panel {
+  border: none !important;
+  background-color: white !important;
+}
+
+span.toctogglespan,
+div#siteSub,
+span.mw-editsection {
+  visibility: hidden !important;
+}
+
+.mw-body-content p {
+  color: #37352f !important;
+}
+img.mwe-math-fallback-image-inline {
+  border-bottom: #3032aa solid 1px;
+  padding: 2px;
+}
