@@ -1,7 +1,9 @@
 a,
 th.navbox-group,
 th.navbox-title,
-th.sidebar-title {
+th.sidebar-title,
+caption,
+dt {
   font-weight: bold !important;
   color: #881391 !important;
   text-align: left !important;
@@ -38,7 +40,10 @@ th.navbox-title,
 th.navbox-group,
 td.navbox-list.navbox-even,
 td.navbox-abovebelow,
-td.navbox-list.navbox-odd {
+td.navbox-list.navbox-odd,
+.quotebox.pullquote.floatright,
+.wikitable,
+.wikitable > * > tr > td {
   border: none !important;
   background-color: white !important;
 }
