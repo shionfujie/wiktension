@@ -1,6 +1,11 @@
-a {
+a,
+th.navbox-group,
+th.navbox-title,
+th.sidebar-title {
   font-weight: bold !important;
   color: #881391 !important;
+  text-align: left !important;
+  vertical-align: top !important;
 }
 
 h1,
@@ -25,7 +30,15 @@ div#toc,
 .thumbinner,
 html.client-js.ve-available,
 div#content,
-div#mw-panel {
+div#mw-panel,
+table.sidebar.nomobile,
+div#catlinks,
+.navbox,
+th.navbox-title,
+th.navbox-group,
+td.navbox-list.navbox-even,
+td.navbox-abovebelow,
+td.navbox-list.navbox-odd {
   border: none !important;
   background-color: white !important;
 }
@@ -40,6 +53,19 @@ span.mw-editsection {
   color: #37352f !important;
 }
 img.mwe-math-fallback-image-inline {
-  border-bottom: #3032aa solid 1px;
-  padding: 2px;
+  border-bottom: #3032aa solid 1px !important;
+  padding: 2px !important;
+}
+
+.navbar.plainlinks.hlist.navbar-mini {
+  display: none !important;
+}
+
+.navbox-group,
+.navbox-title {
+  padding-left: 0px !important;
+}
+
+th.navbox-title > div[id] {
+  margin-left: 0px !important;
 }
