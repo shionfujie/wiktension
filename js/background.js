@@ -70,4 +70,5 @@ function injectFragmentExtractor() {
 
 function applyStyle() {
   chrome.tabs.insertCSS(null, {file: "/css/style.css"})
+  chrome.tabs.executeScript({ file: "/js/style.js" })
 }
