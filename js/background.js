@@ -48,10 +48,6 @@ const actionSpec = {
     "fragment": {
       displayName: "Wikipedia: Take the First Sentence",
       f: injectFragmentExtractor
-    },
-    "style": {
-      displayName: "Wikipedia: Style",
-      f: applyStyle
     }
   }
 };
@@ -66,9 +62,4 @@ function requestNavigateTo(url) {
 
 function injectFragmentExtractor() {
   chrome.tabs.executeScript({ file: "/js/fragment.js" })
-}
-
-function applyStyle() {
-  chrome.tabs.insertCSS(null, {file: "/css/style.css"})
-  chrome.tabs.executeScript({ file: "/js/style.js" })
 }
