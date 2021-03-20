@@ -57,6 +57,7 @@ span.mw-editsection {
 .mw-body-content p {
   color: #37352f !important;
 }
+
 img.mwe-math-fallback-image-inline {
   border-bottom: #3032aa solid 1px !important;
   padding: 2px !important;
@@ -77,4 +78,9 @@ th.navbox-title > div[id] {
 
 .sidebar-list-content.mw-collapsible-content,.navbox tr {
   display: block !important;
+}
+
+[href^="#cite_note"] {
+  color: #8A0000 !important;
+  font-weight: normal !important;
 }
