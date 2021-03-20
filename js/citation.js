@@ -1,4 +1,4 @@
-const refs = $$(`[href^="#cite_note"]`)
+var refs = $$(`[href^="#cite_note"]`)
 setup();
 
 function setup() {
