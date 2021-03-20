@@ -26,7 +26,8 @@ function copyCitation(ev) {
     ev.preventDefault()
 
     const a = ev.currentTarget
-    const citation = $(a.getAttribute("href"))
+    const id = a.getAttribute("href").substring(1)
+    const citation = document.getElementById(id)
     const clip = $(".reference-text", citation).textContent
     console.debug("try to clip: ", clip)
     if (navigator.clipboard === undefined) {
