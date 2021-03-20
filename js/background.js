@@ -54,7 +54,7 @@ const actionSpec = {
       f: injectCitationExtractor
     },
     "perm": {
-      displayName: "Wikipedia: Permanent link",
+      displayName: "Wikipedia: Copy Permanent Link",
       f: requestCopyPermLink
     }
   }
