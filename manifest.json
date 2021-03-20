@@ -1,7 +1,7 @@
 {
   "name": "Wiktension",
   "description": "",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "manifest_version": 2,
   "icons": {
     "16": "images/get_started16.png",
@@ -20,6 +20,7 @@
         "https://*.wikipedia.org/wiki/*"
       ],
       "js": [
+        "/js/util/dom.js",
         "js/content.js"
       ],
       "css": [
