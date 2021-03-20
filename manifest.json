@@ -20,6 +20,7 @@
         "https://*.wikipedia.org/wiki/*"
       ],
       "js": [
+        "/js/util/dom.js",
         "js/content.js"
       ],
       "css": [

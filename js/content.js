@@ -3,11 +3,11 @@ chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
     case "switch language":
       sendResponse(getAvailableLanguage())
       break;
-    case "navigate": 
+    case "navigate":
       location = message.url
       break
     case "perm link":
-      console.log('perm')
+      copyPermLink()
       break
   }
 });
@@ -21,4 +21,14 @@ function getAvailableLanguage() {
     m[a.textContent] = a.href
   }
   return m
+}
+
+function copyPermLink() {
+  const clip = $("#t-permalink > a").href
+  console.debug("try to clip: ", clip)
+  if (navigator.clipboard === undefined) {
+    console.error("navigator.clipboard is not available")
+  } else {
+    navigator.clipboard.writeText(clip);
+  }
 }
