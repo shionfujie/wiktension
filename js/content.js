@@ -3,10 +3,12 @@ chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
     case "switch language":
       sendResponse(getAvailableLanguage())
       break;
-    case "navigate": {
+    case "navigate": 
       location = message.url
       break
-    }
+    case "perm link":
+      console.log('perm')
+      break
   }
 });
 

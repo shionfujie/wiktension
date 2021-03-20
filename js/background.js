@@ -52,6 +52,10 @@ const actionSpec = {
     "cite note": {
       displayName: "Wikipedia: Copy Citation",
       f: injectCitationExtractor
+    },
+    "perm": {
+      displayName: "Wikipedia: Permanent link",
+      f: requestCopyPermLink
     }
   }
 };
@@ -73,4 +77,8 @@ function injectFragmentExtractor() {
 function injectCitationExtractor() {
   executeScript("/js/util/dom.js")
   executeScript("/js/citation.js")
+}
+
+function requestCopyPermLink() {
+  sendMessageToActiveTab({ type: "perm link" })
 }
