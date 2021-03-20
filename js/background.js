@@ -48,6 +48,10 @@ const actionSpec = {
     "fragment": {
       displayName: "Wikipedia: Take the First Sentence",
       f: injectFragmentExtractor
+    },
+    "cite note": {
+      displayName: "Wikipedia: Copy Citation",
+      f: injectCitationExtractor
     }
   }
 };
@@ -60,6 +64,13 @@ function requestNavigateTo(url) {
   sendMessageToActiveTab({ type: "navigate", url });
 }
 
+const executeScript = file => chrome.tabs.executeScript({ file })
+
 function injectFragmentExtractor() {
-  chrome.tabs.executeScript({ file: "/js/fragment.js" })
+  executeScript("/js/fragment.js")
+}
+
+function injectCitationExtractor() {
+  executeScript("/js/util/dom.js")
+  executeScript("/js/citation.js")
 }
