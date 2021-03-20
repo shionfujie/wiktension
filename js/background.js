@@ -71,5 +71,6 @@ function injectFragmentExtractor() {
 }
 
 function injectCitationExtractor() {
+  executeScript("/js/util/dom.js")
   executeScript("/js/citation.js")
 }
