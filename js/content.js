@@ -1,3 +1,10 @@
+for (const ref of $$("sup.reference")) {
+  const prev = ref.previousSibling
+  if (prev && prev.nodeType === Node.TEXT_NODE && prev.data.endsWith(".")) {
+    ref.after(document.createElement("br"))
+  }
+}
+
 chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
   switch (message.type) {
     case "switch language":
