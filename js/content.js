@@ -1,3 +1,30 @@
+const basename = location.pathname.replace(/^.*\/|\.[^.]*$/g, '')
+const es = $$(".mwe-math-element").map((_, i) => {
+  const a = document.createElement("A")
+  const p = document.createElement("P")
+  const clone = _.cloneNode(true)
+  const img = clone.querySelector("img")
+  a.append(p)
+  p.append(clone)
+  img.style = "border-bottom-color: transparent !important; " + img.style.cssText
+
+  _.id = basename + i
+  a.href = "#" + basename + i
+  a.addEventListener('click', e => {
+    e.preventDefault()
+
+    const block = _.closest('.mw-parser-output > *')
+    const y0 = _.offsetTop
+    const y1 = clone.offsetTop
+    block.style['background'] = '#cfe8fc'
+    block.addEventListener('mouseleave', () => block.style['background'] = '', true)
+    window.scroll(0, y0 - y1)
+  })
+
+  return a
+})
+$(".mw-parser-output").prepend(...es)
+
 for (const p of $$("p", $(".mw-parser-output"))) {
   const ul = document.createElement("ul")
   const lis = $$("*:not(sup) > a", p).map(_ => {

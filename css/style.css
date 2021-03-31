@@ -80,7 +80,17 @@ th.navbox-title > div[id] {
   display: block !important;
 }
 
-[href^="#cite_note"] {
+[href^='#cite_note'] {
   color: #8A0000 !important;
   font-weight: normal !important;
+}
+
+[href^='#'] p {
+  padding-left: 8px;
+  border-left: transparent solid 2px;
+}
+
+[href^='#'] p:hover {
+  border-left-color: #3032aa;
+  background: #cfe8fc;
 }
