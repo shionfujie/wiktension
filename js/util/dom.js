@@ -3,5 +3,5 @@ function $(selector, startNode) {
 }
 
 function $$(selector, startNode) {
-    return (startNode || document).querySelectorAll(selector)
+    return Array.from((startNode || document).querySelectorAll(selector))
 }
