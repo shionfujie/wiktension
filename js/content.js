@@ -1,3 +1,16 @@
+for (const p of $$("p", $(".mw-parser-output"))) {
+  const ul = document.createElement("ul")
+  const lis = $$("*:not(sup) > a", p).map(_ => {
+    const li = document.createElement("li")
+    const a = _.cloneNode()
+    li.append(a)
+    a.append(a.title)
+    return li
+  })
+  p.before(ul)
+  ul.append(...lis)
+}
+
 for (const ref of $$("sup.reference")) {
   const prev = ref.previousSibling
   if (prev && prev.nodeType === Node.TEXT_NODE && prev.data.endsWith(".")) {
