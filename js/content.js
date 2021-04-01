@@ -14,11 +14,11 @@ const es = $$(".mwe-math-element").map((_, i) => {
     e.preventDefault()
 
     const block = _.closest('.mw-parser-output > *')
-    const y0 = _.offsetTop
-    const y1 = clone.offsetTop
+    const y0 = _.getBoundingClientRect().y
+    const y1 = clone.getBoundingClientRect().y
     block.style['background'] = '#cfe8fc'
     block.addEventListener('mouseleave', () => block.style['background'] = '', true)
-    window.scroll(0, y0 - y1)
+    window.scrollBy(0, y0 - y1)
   })
 
   return a
