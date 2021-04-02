@@ -23,7 +23,12 @@ const es = $$(".mwe-math-element").map((_, i) => {
 
   return a
 })
-$(".mw-parser-output").prepend(...es)
+const toc = $('#toc')
+if (toc) {
+  toc.after(...es)
+} else {
+  $(".mw-parser-output").prepend(...es)
+}
 
 for (const p of $$("p", $(".mw-parser-output"))) {
   const ul = document.createElement("ul")
