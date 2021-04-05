@@ -32,7 +32,7 @@ if (toc) {
 
 for (const p of $$("p", $(".mw-parser-output"))) {
   const ul = document.createElement("ul")
-  const lis = $$("*:not(sup) > a", p).map(_ => {
+  const lis = $$("*:not(sup) > a[title]", p).map(_ => {
     const li = document.createElement("li")
     const a = _.cloneNode()
     li.append(a)
